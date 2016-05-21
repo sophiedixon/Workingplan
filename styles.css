@@ -1,0 +1,10 @@
+body {
+    padding: 2em;
+}
+
+#scroll{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 600px;
+    border: 1px solid #000;
+}
