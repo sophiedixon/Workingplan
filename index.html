@@ -2,10 +2,29 @@
     <head>
         <title>Working Plan</title>
         <link rel="stylesheet" type="text/css" href="styles.css" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
     </head>
     <body>
         <div id="scroll">
             <img src="Project_research.png"/> 
         </div>
+        <script type="text/javascript">
+            $(function() {
+                var $scroll = $('#scroll');
+                var $img = $scroll.find('img');
+                
+                function resize(){
+                    var height = window.innerHeight;
+                    $scroll.height(height);
+                    $img.height(height);
+                }
+                
+                $(window).on('resize', function() {
+                    resize();
+                });
+                
+                resize();
+            });
+        </script>
     </body>
 </html>
