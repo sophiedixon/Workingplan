@@ -1,6 +1,7 @@
 body {
     padding: 0;
     margin: 0;
+    background: #797979;
 }
 
 .scroll{
@@ -25,13 +26,18 @@ a {
     letter-spacing: 8px;
 }
 
+a span {
+    width: 25px;
+    display: inline-block;
+}
+
 a.research{
-    background: #29274C;
+    /*background: #29274C;*/
 }
 
 a.project{
-    background: #EED3AD;
-    color: #29274C;;
+    /*background: #EED3AD;
+    color: #29274C;*/
 }
 
 a.open .fa-caret-right{
