@@ -1,0 +1,51 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.scroll{
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#accordion div {
+    display: none;
+}
+
+a {
+    display: block;
+    color: #fff;
+    padding-left: 27px;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 33px;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+a.research{
+    background: #29274C;
+}
+
+a.project{
+    background: #EED3AD;
+    color: #29274C;;
+}
+
+a.open .fa-caret-right{
+    display: none;
+}
+
+a.open .fa-caret-down{
+    display: inline;
+}
+
+a.closed .fa-caret-right{
+    display: inline;
+}
+
+a.closed .fa-caret-down{
+    display: none;
+}
