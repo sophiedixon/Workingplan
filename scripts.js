@@ -1,5 +1,6 @@
 $(function() {
     var $accordionItems = $('#accordion div');
+    var $links = $("#accordion a");
     var $scrolls = $('#accordion .scroll');
     var $imgs = $scrolls.find('img');
     
@@ -16,29 +17,36 @@ $(function() {
     });
     
     resize();
+
+    function openItem($a){
+        var divId = $a.attr("href");
+        $(divId).slideDown('fast');        
+        $a.removeClass('closed').addClass('open');
+        // close all other items
+        $links.not("[href='" + divId + "']").each(function(index, a){
+            closeItem($(a));
+        });
+    }
     
-    // display the first div by default.
-    $("#accordion div").first().css('display', 'block');
+    function closeItem($a){
+        var divId = $a.attr("href");
+        $(divId).slideUp('fast');        
+        $a.removeClass('open').addClass('closed');
+    }
 
-    // Get all the links.
-    var link = $("#accordion a");
-
-    // On clicking of the links do something.
-    link.on('click', function(e) {
+    $links.on('click', function(e) {
 
         e.preventDefault();
         
         var $a = $(this);
-
-        var divId = $a.attr("href");
-
-        $(divId).slideDown('fast');
         
-        $a.removeClass('closed').addClass('open');
-
-        $("#accordion div").not(divId).slideUp('fast');
-        
-        $('#accordion a').not($a).removeClass('open').addClass('closed');
-        
+        if ($a.hasClass('closed')){
+            openItem($a);
+        } else {
+            closeItem($a);
+        }
     });
+    
+    // display the first item by default
+    openItem($("#accordion a").first());
 });
