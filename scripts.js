@@ -43,7 +43,7 @@ $(function() {
         height = height - ($('#accordion a').outerHeight() * $('#accordion a').length);
         $accordionItems.height(height);
         $scrolls.height(height);
-        $imgs.height(height - 17);
+        $imgs.height(Math.floor(height - 17));
     }
     
     $(window).on('resize', function() {
