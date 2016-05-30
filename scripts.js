@@ -8,18 +8,20 @@ $(function() {
     var $imgs = $scrolls.find('img');
     
     function openItem($a){
-        var divId = $a.attr("href");
-        $(divId).slideDown('fast');        
+        var divId = $a.attr("href");   
         $a.removeClass('closed').addClass('open');
         // close all other items
         $links.not("[href='" + divId + "']").each(function(index, a){
             closeItem($(a));
         });
+        $(divId).slideDown('fast', function(){
+            $(window).trigger('resize');
+        });  
     }
     
     function closeItem($a){
         var divId = $a.attr("href");
-        $(divId).slideUp('fast');        
+        $(divId).slideUp('fast');
         $a.removeClass('open').addClass('closed');
     }
 
@@ -36,16 +38,16 @@ $(function() {
         }
     });
     
-    function resize(){
+    function scaleImages(){
         var height = window.innerHeight;
         height = height - ($('#accordion a').outerHeight() * $('#accordion a').length);
         $accordionItems.height(height);
         $scrolls.height(height);
-        $imgs.height(height);
+        $imgs.height(height - 17);
     }
     
     $(window).on('resize', function() {
-        resize();
+        scaleImages();
     });
     
     $(window).trigger('resize');
