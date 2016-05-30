@@ -4,7 +4,7 @@ $(function() {
 
     var $accordionItems = $('#accordion div');
     var $links = $("#accordion a");
-    var $scrolls = $('#accordion .scroll');
+    var $scrolls = $('.scroll');
     var $imgs = $scrolls.find('img');
     
     function openItem($a){
