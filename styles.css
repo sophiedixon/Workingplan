@@ -2,6 +2,11 @@ body {
     padding: 0;
     margin: 0;
     background: #797979;
+    overflow: hidden;
+}
+
+#accordion div {
+    display: none;
 }
 
 .scroll{
@@ -9,8 +14,14 @@ body {
     overflow-y: hidden;
 }
 
-#accordion div {
-    display: none;
+img[usemap], map area{
+    outline: none;
+}
+
+table{
+    padding: 0;
+    margin: 0;
+    border: none;
 }
 
 a {

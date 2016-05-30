@@ -1,23 +1,12 @@
 $(function() {
+    
+    $('img[usemap]').rwdImageMaps();
+
     var $accordionItems = $('#accordion div');
     var $links = $("#accordion a");
     var $scrolls = $('#accordion .scroll');
     var $imgs = $scrolls.find('img');
     
-    function resize(){
-        var height = window.innerHeight;
-        height = height - ($('#accordion a').outerHeight() * $('#accordion a').length);
-        $accordionItems.height(height);
-        $scrolls.height(height);
-        $imgs.height(height);
-    }
-    
-    $(window).on('resize', function() {
-        resize();
-    });
-    
-    resize();
-
     function openItem($a){
         var divId = $a.attr("href");
         $(divId).slideDown('fast');        
@@ -47,6 +36,20 @@ $(function() {
         }
     });
     
+    function resize(){
+        var height = window.innerHeight;
+        height = height - ($('#accordion a').outerHeight() * $('#accordion a').length);
+        $accordionItems.height(height);
+        $scrolls.height(height);
+        $imgs.height(height);
+    }
+    
+    $(window).on('resize', function() {
+        resize();
+    });
+    
+    $(window).trigger('resize');
+
     // display the first item by default
     openItem($("#accordion a").first());
 });
