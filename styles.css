@@ -5,6 +5,10 @@ body {
     overflow: hidden;
 }
 
+area {
+    background-color: red;
+}
+
 #accordion div {
     display: none;
 }

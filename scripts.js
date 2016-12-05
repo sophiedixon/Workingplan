@@ -54,4 +54,10 @@ $(function() {
 
     // display the first item by default
     openItem($("#accordion a").first());
+
+    $scrollTo = $('#scrollTo');
+
+    $('html, body').stop().animate({
+        scrollLeft: $scrollTo.offset().left
+    }, 1000);
 });
